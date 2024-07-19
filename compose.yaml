@@ -1,0 +1,9 @@
+services:
+  alpine:
+    build:
+      context: ./build
+      args:
+        GRPC_VERSION: ${GRPC_VERSION:-v1.65.1}
+    platform: ${PLATFORM:-linux/amd64}
+    volumes:
+      - ./src:/src:rw
